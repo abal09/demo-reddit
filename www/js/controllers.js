@@ -17,7 +17,7 @@
             if ($scope.articles.length > 0) {
                 params.after = $scope.articles[$scope.articles.length - 1].data.name;
             }
-            $http.get('https://www.reddit.com/r/funny/new/.json', {params:params}).then(function (response) {
+            $http.get('https://www.reddit.com/r/science/new/.json', {params:params}).then(function (response) {
                 // body...
                 // console.log(response.data.data.children);
                 $scope.articles.push.apply($scope.articles, response.data.data.children);
@@ -32,7 +32,7 @@
             if ($scope.articles.length > 0) {
                 params.before = $scope.articles[0].data.name;
             }
-            $http.get('https://www.reddit.com/r/funny/new/.json', {params:params}).then(function (response) {
+            $http.get('https://www.reddit.com/r/science/new/.json', {params:params}).then(function (response) {
                 // body...
                 // console.log(response.data.data.children);
                 $scope.articles.unshift.apply($scope.articles, response.data.data.children);
